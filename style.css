@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #05403a;
+    background-color: #ffe8e7;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-secton {
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-color: #f9b2b2;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100vh;
+  
+}
+
+.images-around-the-text {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.top-row, .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    padding-bottom: 5px;
+}
+
+
+.middle-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding-top: 0;
+    margin-top: 0;
+    font-family: 'Caveat', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: #d0476e;
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5em;
+}
+
+.resume, .about-me, .projects, .contact {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contact {
+    margin-bottom: 50px;
+}
+
+.resume {
+    margin-top: 50px;
+}
+
+.projects {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-family: "Merriweather", serif;
+}
+
+P {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+    color: #1b5454;
+}
+
+.image-cakes {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.about-me>p:last-of-type {
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 530px) {
+
+    .images-around-the-text img {
+        display: none;
+    }
+
+    .middle-row {
+        display: flex;
+        margin-top: 50px;
+    }
+
+}
+
+
+
+
+
