@@ -1,0 +1,137 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+    body {
+        background-color: #ffe8e7;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    h2,
+    p {
+        text-align: center;
+    }
+
+    h2,
+    h3 {
+        color: #d0476e;
+    }
+
+    .cakes-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gallery-title {
+        text-align: left;
+        margin: 30px 0 15px 0;
+        font-family: 'Caveat', cursive;
+        font-size: 1.8em;
+        color: #d0476e;
+        width: fit-content;
+    }
+
+    .image-cakes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .zoomable {
+        transition: transform 0.3s ease, top 0.3s ease, left 0.3s ease;
+        cursor: zoom-in;
+        z-index: 1;
+    }
+
+    .zoomable.zoomed {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(6);
+        cursor: zoom-out;
+        z-index: 999;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #blur-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Optional: subtle dark overlay */
+        z-index: 998;
+        display: none;
+    }
+</style>
+
+<div id="blur-overlay"></div>
+<div class="about-me">
+    <h2>My interests:</h2>
+    <p>I like making cakes, especially for birthdays! It’s something I really enjoy doing for my friends and family.
+        Here are some of the cakes I’ve made over the years — each one has its own little story. </p>
+    <div class="cakes-gallery">
+        <h3 class="gallery-title">Gallery:</h3>
+        <div class="image-cakes">
+            <img src="./images/20191117_122545.png" class="zoomable" height="100px" width="100px" alt="johnyCake">
+            <img src="./images/20200927_095141.png" class="zoomable" height="100px" width="100px" alt="flowers">
+            <img src="./images/20201009_202616.png" class="zoomable" height="100px" width="100px" alt="frozen">
+            <img src="./images/20210111_125901.png" class="zoomable" height="100px" width="100px" alt="superMario">
+            <img src="./images/20210712_170514.png" class="zoomable" height="100px" width="100px" alt="nba">
+            <img src="./images/20221010_164310.png" class="zoomable" height="100px" width="100px" alt="fairy">
+            <img src="./images/20221118_180524.png" class="zoomable" height="100px" width="100px" alt="ski">
+        </div>
+    </div>
+    <p>Another hobby of mine is skiing.</p>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const images = document.querySelectorAll('.zoomable');
+        const overlay = document.getElementById('blur-overlay');
+
+        images.forEach(function (image) {
+            image.addEventListener('click', function () {
+                const isZoomed = image.classList.toggle('zoomed');
+                overlay.style.display = isZoomed ? 'block' : 'none';
+
+                // Optional: lock scroll
+                document.body.style.overflow = isZoomed ? 'hidden' : 'auto';
+
+                // If any other image is zoomed, remove its zoom
+                images.forEach(img => {
+                    if (img !== image) img.classList.remove('zoomed');
+                });
+            });
+        });
+
+        // Close zoom when clicking overlay
+        overlay.addEventListener('click', function () {
+            images.forEach(img => img.classList.remove('zoomed'));
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+</script>

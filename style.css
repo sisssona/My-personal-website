@@ -9,8 +9,8 @@
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #05403a;
-    background-color: #ffe8e7;
+    color: #c6878f;
+    background-color:  #253d5b;
     margin: 0;
     padding: 0;
 }
@@ -75,11 +75,15 @@ h2 {
 
 a {
     text-decoration: none;
-    color: #d0476e;
+    color: #b79d94;
     font-weight: bold;
     font-family: 'Caveat', cursive;
     font-size: 1.5em;
 }
+
+a:hover {
+    cursor: pointer;
+  }
 
 .resume, .about-me, .projects, .contact {
     margin-left: 50px;
@@ -87,6 +91,7 @@ a {
 }
 
 .contact {
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -95,7 +100,7 @@ a {
 }
 
 .projects {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -107,7 +112,7 @@ P {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 2em;
-    color: #1b5454;
+    color: #0e103d;
 }
 
 .image-cakes {
@@ -125,6 +130,27 @@ P {
 .about-me>p:last-of-type {
     margin-bottom: 40px;
 }
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.click {
+    border-radius: 5px;
+    background-color: #6b8380;
+    color: #f2e1c7;
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.click:hover {
+    cursor: pointer;
+  }
 
 
 @media (max-width: 530px) {
